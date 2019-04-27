@@ -1,0 +1,4 @@
+.celda {
+    border: 1px solid black;
+    grid-row: 1 / span 2;
+}
