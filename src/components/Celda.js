@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../css/Celda.css';
 
-export class Celda{
+export class Celda extends Component{
 
     constructor(props){
         super (props);
