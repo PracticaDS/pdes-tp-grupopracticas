@@ -1,0 +1,5 @@
+.grilla {
+    display: grid;
+    grid-template-columns: auto;
+    background-color: white;
+  }
