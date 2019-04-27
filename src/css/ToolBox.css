@@ -1,0 +1,19 @@
+.ToolBox{
+    height: 350px;
+    width: 30%;
+    align-content: center;
+}
+
+div.ButtonToolbox.seleccionado img{
+    filter: hue-rotate(60deg) brightness(500%);
+}
+
+h3{
+    color:orange;
+}
+
+table{
+    background-color: white;
+    border-radius: 10%;
+    margin: 0 auto;
+}

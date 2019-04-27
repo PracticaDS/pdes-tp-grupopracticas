@@ -13,8 +13,6 @@ export class ButtonToolBox extends Component {
                  </div>;	
       }
   }
-
-
 }
 
 
