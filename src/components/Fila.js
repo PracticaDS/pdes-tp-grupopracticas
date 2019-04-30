@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
-import { Celda } from './Celda';
+import Celda from './Celda';
 
 
 export class Fila extends Component {
@@ -23,12 +23,12 @@ export class Fila extends Component {
 
     dibujarCeldas(){
         var celdas = [];
-        for (var i=1; i<= this.props.columnas; i++){
+        for (var i=1; i <= this.props.columnas; i++){
             celdas.push(
-                <Celda fila={this.props.index} columna={i} />
+                <Celda key={i} fila={this.props.index} columna={i} />
             )
         }
-        this.celdas= celdas;
+        this.celdas = celdas;
         return celdas;
     }
 

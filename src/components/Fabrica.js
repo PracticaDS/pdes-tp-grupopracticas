@@ -21,10 +21,10 @@ export class Fabrica extends Component {
   }
   
   dibujarTablero(){
-    var grilla = [];
-    for (var i = 1; i <= this.props.filas; i++) {
+    let grilla = [];
+    for (let i = 1; i <= this.props.filas; i++) {
       grilla.push(
-        <Fila index= {i} columnas= {this.props.columnas} />
+        <Fila key={i} index={i} columnas={this.props.columnas} />
       );
     }
     this.grillas = grilla;

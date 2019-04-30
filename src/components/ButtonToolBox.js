@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
-import PropTypes            from 'prop-types';
+import PropTypes from 'prop-types';
 
-export class ButtonToolBox extends Component {
-    render() {
-	    if (this.props.seleccionado){
-          return <div className="ButtonToolbox seleccionado" >
-                    <img src={this.props.src} alt="actions" />
-                 </div>;
-        }else{
-          return <div className="ButtonToolbox" onClick={() => this.props.onSelect(this.props.nombre) } >
-                    <img src={this.props.src} alt="actions"/>
-                 </div>;	
-      }
+import { connect } from 'react-redux';
+import { addMachine } from '../actions/toolboxAction'
+
+
+class ButtonToolBox extends Component {
+
+  triggerAction = () =>  {
+    this.props.onSelect(this.props.nombre)
+    this.props.addMachine({ nombre: this.props.nombre, img: this.props.src})
+  }
+
+  render() {
+    if (this.props.seleccionado){
+        return <div className="ButtonToolbox seleccionado" >
+                  <img src={this.props.src} alt="actions" />
+                </div>;
+      }else{
+        return <div className="ButtonToolbox" onClick={this.triggerAction} >
+                  <img src={this.props.src} alt="actions"/>
+                </div>;	
+    }
   }
 }
 
@@ -19,5 +29,7 @@ export class ButtonToolBox extends Component {
 ButtonToolBox.propTypes = {
     nombre: PropTypes.string,
     seleccionado: PropTypes.bool
-  
 }
+
+
+export default connect(null, { addMachine })(ButtonToolBox)

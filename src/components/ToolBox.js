@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ButtonToolBox }    from './ButtonToolBox';
+import ButtonToolBox from './ButtonToolBox';
 import '../css/ToolBox.css';
 
 import boton_furnace     from '../images/furnace.PNG';
