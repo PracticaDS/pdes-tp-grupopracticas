@@ -15,14 +15,6 @@ class Celda extends Component{
         this.setState({machine: this.props.machine})
     }
 
-    includeMachine = () => {
-        if(this.props.machine) {
-            return 
-        } else {
-            return 'no hay'
-        }
-    }
-
     render () {
         return (
             <div className="celda" onClick={this.agregarMaquina}>

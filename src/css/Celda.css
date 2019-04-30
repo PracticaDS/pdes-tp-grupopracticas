@@ -1,4 +1,10 @@
 .celda {
     border: 1px solid black;
-    grid-row: 1 / span 2;
+    grid-row: 1;
+}
+
+.celda img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
