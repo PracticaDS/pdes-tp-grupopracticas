@@ -1,15 +1,20 @@
-import { ADD_MACHINE } from '../actions/types';
+import { SELECT_MACHINE, UNSELECT_MACHINE } from '../actions/types';
 
-const initialState = {
-    item: { }
-}
+const initialState = {  }
 
 export default function(state = initialState, action) {
     switch(action.type) {
-        case ADD_MACHINE:
+        case SELECT_MACHINE:
             return {
                 ...state,
-                machine: action.payload
+                machine: action.payload,
+                selected: true
+            }
+        case UNSELECT_MACHINE:
+            return {
+                ...state,
+                machine: action.payload,
+                selected: false
             }
         default:
             return state        

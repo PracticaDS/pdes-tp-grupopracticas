@@ -1,8 +1,16 @@
-import { ADD_MACHINE } from './types';
+import { SELECT_MACHINE, UNSELECT_MACHINE } from './types';
 
-export const addMachine = (machine) => dispatch => {
+
+export const selectMachine = (machine) => dispatch => {
     dispatch({
-        type: ADD_MACHINE,
+        type: SELECT_MACHINE,
         payload: machine
+    })
+}
+
+export const unselectMachine = () => dispatch => {
+    dispatch({
+        type: UNSELECT_MACHINE,
+        payload: null
     })
 }

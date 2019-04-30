@@ -23,14 +23,9 @@ export class ToolBox extends Component {
     this.state = { toolSeleccionado: "" };
   }
 
-  handleSelect = (tool) => {
-    this.setState({ toolSeleccionado: tool });
-  }
-
   crearBoton(props){
     return <ButtonToolBox 
               seleccionado={props.nombre === this.state.toolSeleccionado}
-              onSelect={this.handleSelect}
               nombre={props.nombre} 
               src={props.src} 
             /> 
