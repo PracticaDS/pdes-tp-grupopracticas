@@ -34,12 +34,13 @@
     ]
   },
   "devDependencies": {
-    "@storybook/cli": "^5.0.11",
-    "@storybook/react": "^5.0.11",
+    "@babel/core": "^7.4.4",
     "@storybook/addon-actions": "^5.0.11",
     "@storybook/addon-links": "^5.0.11",
     "@storybook/addons": "^5.0.11",
-    "@babel/core": "^7.4.4",
-    "babel-loader": "^8.0.5"
+    "@storybook/cli": "^5.0.11",
+    "@storybook/react": "^5.0.11",
+    "babel-loader": "^8.0.5",
+    "redux-devtools-extension": "^2.13.8"
   }
 }
