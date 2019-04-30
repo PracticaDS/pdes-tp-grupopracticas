@@ -2,23 +2,22 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { addMachine } from '../actions/toolboxAction'
+import { selectMachine, unselectMachine } from '../actions/toolboxAction'
 
 
 class ButtonToolBox extends Component {
 
-  triggerAction = () =>  {
-    this.props.onSelect(this.props.nombre)
-    this.props.addMachine({ nombre: this.props.nombre, img: this.props.src})
+  triggerSelectMachineAction = () =>  {
+    this.props.selectMachine({ nombre: this.props.nombre, img: this.props.src})
   }
 
   render() {
-    if (this.props.seleccionado){
+    if (this.props.selected && this.props.nombre === this.props.machine.nombre){
         return <div className="ButtonToolbox seleccionado" >
                   <img src={this.props.src} alt="actions" />
                 </div>;
-      }else{
-        return <div className="ButtonToolbox" onClick={this.triggerAction} >
+    } else {
+        return <div className="ButtonToolbox" onClick={this.triggerSelectMachineAction} >
                   <img src={this.props.src} alt="actions"/>
                 </div>;	
     }
@@ -28,8 +27,16 @@ class ButtonToolBox extends Component {
 
 ButtonToolBox.propTypes = {
     nombre: PropTypes.string,
-    seleccionado: PropTypes.bool
+    selected: PropTypes.bool
 }
 
+ButtonToolBox.defaultProps = { 
+  selected: false
+}
 
-export default connect(null, { addMachine })(ButtonToolBox)
+const mapStateToProps = state => ({
+  machine: state.machineSelected.machine,
+  selected: state.machineSelected.selected
+})
+
+export default connect(mapStateToProps, { selectMachine, unselectMachine })(ButtonToolBox)

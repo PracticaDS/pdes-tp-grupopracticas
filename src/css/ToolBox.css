@@ -6,23 +6,9 @@
 
 
 div.ButtonToolbox.seleccionado img {
-    position: relative;
-    -webkit-filter: brightness(110%) saturate(160%) sepia(30%) hue-rotate(350deg);
-    filter: brightness(110%) saturate(160%) sepia(100%) hue-rotate(350deg);
-  }
-  div.ButtonToolbox.seleccionado img::before {
-    content: "";
-    display: block;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    pointer-events: none;
-    mix-blend-mode: screen;
-    opacity: 0.3;
-    background: rgba(204, 68, 0, 1);
-  }
+  -webkit-filter: brightness(110%) saturate(160%) sepia(30%) hue-rotate(350deg);
+  filter: brightness(110%) saturate(160%) sepia(100%) hue-rotate(350deg);
+}
 
 h3{
     color:orange;
