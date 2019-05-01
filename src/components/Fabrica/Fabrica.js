@@ -14,7 +14,7 @@ export class Fabrica extends Component {
 
   render() {
     return (
-        <div className="grilla">
+        <div className="Fabrica">
             {this.dibujarTablero()}
         </div>
     )
