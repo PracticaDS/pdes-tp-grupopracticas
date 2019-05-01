@@ -1,0 +1,1 @@
+import Fabrica from './Fabrica'

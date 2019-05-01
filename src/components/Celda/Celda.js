@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../css/Celda.css';
+import './Celda.css';
 import { connect } from 'react-redux';
-import { unselectMachine } from '../actions/toolboxAction'
+import { unselectMachine } from '../../actions/toolboxAction'
 
 
 class Celda extends Component{
