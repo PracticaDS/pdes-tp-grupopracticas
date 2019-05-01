@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Fabrica } from './components/Fabrica';
-import { ToolBox } from './components/ToolBox';
+import { Fabrica } from './components/Fabrica/Fabrica';
+import { ToolBox } from './components/ToolBox/ToolBox';
 import store from './store';
 import { Provider } from 'react-redux';
 

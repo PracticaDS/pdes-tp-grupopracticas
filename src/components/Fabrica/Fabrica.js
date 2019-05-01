@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../css/Fabrica.css';
+import './Fabrica.css';
 import { PropTypes } from 'prop-types';
-import { Fila } from './Fila'
+import { Fila } from '../Fila/Fila'
 
 export class Fabrica extends Component {
   

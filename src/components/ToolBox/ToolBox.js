@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import ButtonToolBox from './ButtonToolBox';
-import '../css/ToolBox.css';
+import ButtonToolBox from '../ButtonToolBox/ButtonToolBox';
+import './ToolBox.css';
 
-import boton_furnace     from '../images/furnace.PNG';
-import boton_seller      from '../images/seller.PNG';
-import boton_crafter     from '../images/crafter.PNG';
-import boton_start       from '../images/starter.PNG';
-import boton_transporter from '../images/transporter.PNG';
+import boton_furnace     from '../../images/furnace.PNG';
+import boton_seller      from '../../images/seller.PNG';
+import boton_crafter     from '../../images/crafter.PNG';
+import boton_start       from '../../images/starter.PNG';
+import boton_transporter from '../../images/transporter.PNG';
 
-import boton_move   from '../images/move.PNG';
-import boton_borrar from '../images/delete.PNG';
-import boton_rotar  from '../images/rotate.PNG';
+import boton_move   from '../../images/move.PNG';
+import boton_borrar from '../../images/delete.PNG';
+import boton_rotar  from '../../images/rotate.PNG';
 
 
 

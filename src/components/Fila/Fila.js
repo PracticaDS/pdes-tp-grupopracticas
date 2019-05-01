@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
-import Celda from './Celda';
-
+import Celda from '../Celda/Celda';
+import './Fila.css'
 
 export class Fila extends Component {
 
