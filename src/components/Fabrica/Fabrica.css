@@ -1,5 +1,4 @@
-.grilla {
-    display: grid;
-    grid-template-columns: auto;
-    background-color: white;
-  }
+.Fabrica {
+  display: grid;
+  background-color: white;
+}

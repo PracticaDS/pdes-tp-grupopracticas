@@ -22,7 +22,7 @@ class Celda extends Component{
 
     render () {
         return (
-            <div className="celda" onClick={this.addMachine}>
+            <div className="Celda" onClick={this.addMachine}>
                 { this.state.machine ? <img src={this.state.machine.img} alt="actions"/> : null }
             </div>   
         )
