@@ -1,0 +1,25 @@
+.Board {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(20px, 50px));
+    grid-auto-rows: 50px;
+  }
+  
+  .Board::before {
+    content: '';
+    width: 0;
+    padding-bottom: 100%;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+  }
+  
+  .Board > *:first-child {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+  }
+  
+  /* Just to make the grid visible */
+  
+  .Board > * {
+    background: white;
+    border: 1px black solid;
+  }
