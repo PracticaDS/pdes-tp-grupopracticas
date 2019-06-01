@@ -9,8 +9,7 @@ cache:
 
 script:
   - npm test
-  - npm run 
-  - npm build
+  - npm run build
 
 deploy:
   provider: pages
