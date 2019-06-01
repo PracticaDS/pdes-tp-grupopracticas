@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="Container">
-          <h1>Revolucion Industrial</h1>
+          <h1>Revolución Industrial</h1>
           <div className="App"> 
             <ToolBox /> 
             <Fabrica />
