@@ -13,8 +13,7 @@ import boton_borrar from '../../images/delete.PNG';
 import boton_rotar  from '../../images/rotate.PNG';
 import EditionButton from '../EditionButton/EditionButton';
 
-
-
+import { DELETE, MOVE, ROTATE } from '../../utils/EditionTypes'
 
 
 export class ToolBox extends Component {
@@ -37,6 +36,7 @@ export class ToolBox extends Component {
               seleccionado={props.nombre === this.state.toolSeleccionado}
               nombre={props.nombre} 
               src={props.src} 
+              type={props.type}
             /> 
   }
 
@@ -64,11 +64,11 @@ export class ToolBox extends Component {
                 <table>
                   <tbody>
                     <tr>
-                      <td>{this.createEditionButton({nombre: "delete", src: boton_borrar })}</td>
-                      <td>{this.createEditionButton({nombre: "move",   src: boton_move })}</td>
+                      <td>{this.createEditionButton({nombre: "delete", src: boton_borrar, type: DELETE })}</td>
+                      <td>{this.createEditionButton({nombre: "move",   src: boton_move, type: MOVE})}</td>
                     </tr>
                     <tr>
-                      <td>{this.createEditionButton({nombre: "rotate",   src: boton_rotar })}</td>
+                      <td>{this.createEditionButton({nombre: "rotate",   src: boton_rotar, type: ROTATE })}</td>
                     </tr>
                   </tbody>
                 </table>

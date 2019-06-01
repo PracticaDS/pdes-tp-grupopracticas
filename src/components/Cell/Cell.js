@@ -2,42 +2,46 @@ import React, { Component } from 'react'
 import './Cell.css'
 import { connect } from 'react-redux';
 import { unselectMachine } from '../../actions/toolboxAction'
-import { addMachineToCell } from '../../actions/cellsAction'
+import { addMachineToCell, selectMachine } from '../../actions/cellsAction'
+import { selectCelda } from '../../actions/editionButtonAction'
 
 
 
 class Cell extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = { machine: null }
-  }
-
   hasMachine = () => {
-    return this.state.machine
+    return this.props.machine
   }
 
   onClick = () => {
     if (this.hasMachine()) {
-      this.setState({isSelected:true})
       this.props.selectCelda(this.props.id)
-    } else if (this.props.machine){
-      this.props.addMachineToCell(this.props.machine, this.props.id)
+      this.props.selectMachine(this.props.id)
+    } else if (this.props.selectedMachine){
+      this.props.addMachineToCell(this.props.selectedMachine, this.props.id)
       this.props.unselectMachine()
     }
   }
 
+
   render() {
     return (
-      <div className="Cell" onClick={this.onClick}>
-        { this.state.machine ? <img src={this.state.machine.img} alt="actions"/> : null }
+      <div className={'Cell ' + (this.props.selected ? 'selected' : '')} onClick={this.onClick}>
+        { this.props.machine ? <img src={this.props.machine.img} className={this.props.machine.direction ? this.props.machine.direction : ''} alt="actions"/> : null }
       </div>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  machine: state.machineSelected.machine,
+  selectedMachine: state.machineSelected.machine,
 })
 
-export default connect(mapStateToProps, { unselectMachine, addMachineToCell })(Cell)
+const actions = { 
+  unselectMachine, 
+  addMachineToCell, 
+  selectCelda,
+  selectMachine
+}
+
+export default connect(mapStateToProps, actions)(Cell)

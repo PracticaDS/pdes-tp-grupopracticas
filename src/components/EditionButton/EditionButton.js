@@ -1,15 +1,28 @@
 import React, { Component } from 'react'
 import './EditionButton.css'
 import { connect } from 'react-redux'
-import { clearCell } from '../../actions/cellsAction'
+import { clearCell, rotateMachine } from '../../actions/cellsAction'
+import { unselectCelda } from '../../actions/editionButtonAction'
+import { DELETE, MOVE, ROTATE } from '../../utils/EditionTypes'
 
 
 class EditionButton extends Component {
 
 
-    triggerSelectButtonAction = () => {
+    onClick = () => {
         if(this.props.selectedCelda) {
-            this.clearCell(this.props.selectedCelda)
+            switch(this.props.type) {
+                case DELETE:
+                    this.props.clearCell(this.props.selectedCelda)
+                    this.props.unselectCelda()
+                    break
+                case ROTATE:
+                    this.props.rotateMachine(this.props.selectedCelda)
+                    this.props.unselectCelda()
+                    break
+                default:
+                    this.props.unselectCelda()
+            }
         }
     }
 
@@ -21,7 +34,7 @@ class EditionButton extends Component {
                     <img src={this.props.src} alt="actions" />
                     </div>;
         } else {
-            return <div className="EditionButton" onClick={this.triggerSelectButtonAction} >
+            return <div className="EditionButton" onClick={this.onClick} >
                     <img src={this.props.src} alt="actions"/>
                     </div>;	
         }
@@ -33,4 +46,10 @@ const mapStateToProps = state => ({
     selectedCelda: state.selectedCelda.celda,
 })
 
-export default connect(mapStateToProps, { clearCell })(EditionButton)
+const actions = {
+    clearCell,
+    unselectCelda,
+    rotateMachine
+}
+
+export default connect(mapStateToProps, actions)(EditionButton)
