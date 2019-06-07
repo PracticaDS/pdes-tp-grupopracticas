@@ -6,7 +6,7 @@ import { unselectCelda } from '../../actions/editionButtonAction'
 import { DELETE, MOVE, ROTATE } from '../../utils/EditionTypes'
 
 
-class EditionButton extends Component {
+export class EditionButton extends Component {
 
 
     onClick = () => {

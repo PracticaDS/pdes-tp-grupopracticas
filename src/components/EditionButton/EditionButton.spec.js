@@ -1,11 +1,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Fabrica from './Fabrica'
+import { EditionButton } from './EditionButton'
 
-describe('Fabrica', () => {
+describe('ToolBox', () => {
 
   it('should render correctly whithout props', () => {
-    const component = shallow(<Fabrica />)
+    const component = shallow(<EditionButton />)
     expect(component).toMatchSnapshot()
   })
   

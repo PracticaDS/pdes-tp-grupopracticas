@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { selectMachine, unselectMachine } from '../../actions/toolboxAction'
 
 
-class ButtonToolBox extends Component {
+export class ButtonToolBox extends Component {
 
   triggerSelectMachineAction = () =>  {
     this.props.selectMachine({ nombre: this.props.nombre, img: this.props.src})
