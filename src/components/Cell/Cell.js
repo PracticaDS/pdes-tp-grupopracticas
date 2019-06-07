@@ -3,7 +3,7 @@ import './Cell.css'
 import { connect } from 'react-redux';
 import { unselectMachine } from '../../actions/toolboxAction'
 import { addMachineToCell, selectMachine } from '../../actions/cellsAction'
-import { selectCelda } from '../../actions/editionButtonAction'
+import { selectCell } from '../../actions/editionButtonAction'
 
 export class Cell extends Component {
 
@@ -13,7 +13,7 @@ export class Cell extends Component {
 
   onClick = () => {
     if (this.hasMachine()) {
-      this.props.selectCelda(this.props.id)
+      this.props.selectCell({cellId: this.props.id, machine:this.props.machine})
       this.props.selectMachine(this.props.id)
     } else if (this.props.selectedMachine){
       this.props.addMachineToCell(this.props.selectedMachine, this.props.id)
@@ -38,7 +38,7 @@ const mapStateToProps = state => ({
 const actions = { 
   unselectMachine, 
   addMachineToCell, 
-  selectCelda,
+  selectCell,
   selectMachine
 }
 

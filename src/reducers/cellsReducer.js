@@ -42,7 +42,12 @@ const selectMachine = (cells, cellId) => {
 }
 
 const addMachine = (cells, payload) => {
-    return cells.map(c => c.id === payload.cellId ? {id:c.id, machine: {...payload.machine, direction: 'SOUTH'}} : c)
+    return cells.map(c => c.id === payload.cellId ? 
+        {
+            id:c.id, 
+            machine: {...payload.machine, direction: payload.machine.direction ? payload.machine.direction : 'SOUTH'}
+        } : c
+    )
 }
 
 const rotateMachine = (cells, cellId) => {
