@@ -1,10 +1,7 @@
 import React from 'react';
-
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
 
-import { Button, Welcome } from '@storybook/react/demo';
 import Celda from '../components/Celda';
 import { Provider } from 'react-redux';
 import store from '../store';

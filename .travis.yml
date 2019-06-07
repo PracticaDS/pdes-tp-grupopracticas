@@ -8,8 +8,9 @@ cache:
     - node_modules
 
 script:
-  - npm test
-  - npm run build
+  - yarn lint
+  - yarn test
+  - yarn build
 
 deploy:
   provider: pages
