@@ -35,7 +35,7 @@ export class EditionButton extends Component {
     clearCell = (cellId) => this.props.clearCell(cellId)
 
     render() {
-        if (this.props.selected && this.props.nombre === this.props.machine.nombre){
+        if (this.props.selected && this.props.name === this.props.machine.name){
             return <div className="EditionButton seleccionado" >
                     <img src={this.props.src} alt="actions" />
                     </div>;

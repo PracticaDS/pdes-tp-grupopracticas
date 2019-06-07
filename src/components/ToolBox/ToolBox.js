@@ -23,18 +23,19 @@ export default class ToolBox extends Component {
     this.state = { toolSeleccionado: "" };
   }
 
-  crearBoton(props){
+  crearBoton(machine){
     return <ButtonToolBox 
-              seleccionado={props.nombre === this.state.toolSeleccionado}
-              nombre={props.nombre} 
-              src={props.src} 
+              seleccionado={machine.name === this.state.toolSeleccionado}
+              name={machine.name} 
+              src={machine.src} 
+              price={machine.price}
             /> 
   }
 
   createEditionButton(props){
     return <EditionButton 
-              seleccionado={props.nombre === this.state.toolSeleccionado}
-              nombre={props.nombre} 
+              seleccionado={props.name === this.state.toolSeleccionado}
+              machine={props.name} 
               src={props.src} 
               type={props.type}
             /> 
@@ -43,35 +44,35 @@ export default class ToolBox extends Component {
   render() {
     return (
       <div className="ToolBox">
-              <h3>Máquinas</h3>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>{this.crearBoton({nombre: "starter", src: boton_start })}</td>
-                      <td>{this.crearBoton({nombre: "crafter", src: boton_crafter })}</td>
-                    </tr>
-                    <tr>
-                      <td>{this.crearBoton({nombre: "seller", src: boton_seller })}</td>
-                      <td>{this.crearBoton({nombre: "furnace", src: boton_furnace })}</td>
-                    </tr>
-                    <tr>
-                      <td>{this.crearBoton({nombre: "transporter", src: boton_transporter })}</td>
-                    </tr>
-                  </tbody>
-                </table>
+        <h3>Máquinas</h3>
+          <table>
+            <tbody>
+              <tr>
+                <td>{this.crearBoton({name: "starter", src: boton_start, price: 400 })}</td>
+                <td>{this.crearBoton({name: "crafter", src: boton_crafter, price: 500 })}</td>
+              </tr>
+              <tr>
+                <td>{this.crearBoton({name: "seller", src: boton_seller, price: 300 })}</td>
+                <td>{this.crearBoton({name: "furnace", src: boton_furnace, price: 200 })}</td>
+              </tr>
+              <tr>
+                <td>{this.crearBoton({name: "transporter", src: boton_transporter, price: 100 })}</td>
+              </tr>
+            </tbody>
+          </table>
 
-                <h3>Edición</h3>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>{this.createEditionButton({nombre: "delete", src: boton_borrar, type: DELETE })}</td>
-                      <td>{this.createEditionButton({nombre: "move",   src: boton_move, type: MOVE})}</td>
-                    </tr>
-                    <tr>
-                      <td>{this.createEditionButton({nombre: "rotate",   src: boton_rotar, type: ROTATE })}</td>
-                    </tr>
-                  </tbody>
-                </table>
+          <h3>Edición</h3>
+          <table>
+            <tbody>
+              <tr>
+                <td>{this.createEditionButton({name: "delete", src: boton_borrar, type: DELETE })}</td>
+                <td>{this.createEditionButton({name: "move", src: boton_move, type: MOVE})}</td>
+              </tr>
+              <tr>
+                <td>{this.createEditionButton({name: "rotate", src: boton_rotar, type: ROTATE })}</td>
+              </tr>
+            </tbody>
+          </table>
       </div>
     )
   }

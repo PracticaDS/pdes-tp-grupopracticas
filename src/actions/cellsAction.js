@@ -39,10 +39,3 @@ export const rotateMachine = (cellId) => dispatch => {
     })
 }
 
-// export const moveMachine = (cellId) => dispatch => {
-//     dispatch({
-//         type: ROTATE_MACHINE,
-//         payload: cellId
-//     })
-// }
-

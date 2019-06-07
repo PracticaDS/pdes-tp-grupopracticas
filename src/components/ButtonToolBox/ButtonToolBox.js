@@ -8,11 +8,11 @@ import { selectMachine, unselectMachine } from '../../actions/toolboxAction'
 export class ButtonToolBox extends Component {
 
   triggerSelectMachineAction = () =>  {
-    this.props.selectMachine({ nombre: this.props.nombre, img: this.props.src})
+    this.props.selectMachine({ name: this.props.name, img: this.props.src, price: this.props.price})
   }
 
   render() {
-    if (this.props.selected && this.props.nombre === this.props.machine.nombre){
+    if (this.props.selected && this.props.name === this.props.machine.name){
         return <div className="ButtonToolbox seleccionado" >
                   <img src={this.props.src} alt="actions" />
                 </div>;
@@ -26,7 +26,7 @@ export class ButtonToolBox extends Component {
 
 
 ButtonToolBox.propTypes = {
-    nombre: PropTypes.string,
+    name: PropTypes.string,
     selected: PropTypes.bool
 }
 
