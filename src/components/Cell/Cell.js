@@ -5,9 +5,7 @@ import { unselectMachine } from '../../actions/toolboxAction'
 import { addMachineToCell, selectMachine } from '../../actions/cellsAction'
 import { selectCelda } from '../../actions/editionButtonAction'
 
-
-
-class Cell extends Component {
+export class Cell extends Component {
 
   hasMachine = () => {
     return this.props.machine

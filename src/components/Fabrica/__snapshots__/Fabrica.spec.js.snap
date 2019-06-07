@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fabrica should render correctly whithout props 1`] = `
+<div
+  className="Fabrica"
+>
+  <Connect(Board) />
+</div>
+`;

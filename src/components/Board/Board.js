@@ -4,7 +4,7 @@ import './Board.css'
 import { connect } from 'react-redux'
 
 
-class Board extends Component {
+export class Board extends Component {
 
   newCell(cell) {
     return <Cell key={cell.id} id={cell.id} machine={cell.machine} selected={cell.selected} />

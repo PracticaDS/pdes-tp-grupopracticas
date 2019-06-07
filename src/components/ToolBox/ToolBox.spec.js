@@ -1,10 +1,12 @@
-import ToolBox from './ToolBox'
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import { shallow } from 'enzyme'
 import ToolBox from './ToolBox'
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<ToolBox />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+describe('ToolBox', () => {
+
+  it('should render correctly whithout props', () => {
+    const component = shallow(<ToolBox />)
+    expect(component).toMatchSnapshot()
+  })
+  
+})

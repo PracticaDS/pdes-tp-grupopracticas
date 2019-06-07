@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonToolBox should render correctly whith props 1`] = `
+<div
+  className="ButtonToolbox"
+  onClick={[Function]}
+>
+  <img
+    alt="actions"
+    src="src_img"
+  />
+</div>
+`;
+
+exports[`ButtonToolBox should render correctly whithout props 1`] = `
+<div
+  className="ButtonToolbox"
+  onClick={[Function]}
+>
+  <img
+    alt="actions"
+  />
+</div>
+`;

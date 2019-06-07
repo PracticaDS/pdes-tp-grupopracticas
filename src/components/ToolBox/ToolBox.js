@@ -16,7 +16,7 @@ import EditionButton from '../EditionButton/EditionButton';
 import { DELETE, MOVE, ROTATE } from '../../utils/EditionTypes'
 
 
-export class ToolBox extends Component {
+export default class ToolBox extends Component {
 
    constructor(props) {
     super(props);
