@@ -1,3 +1,9 @@
 .Fabrica {
-
+    text-align: center;
+    margin: 2%;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    height: 80vh;
+    align-items: center;
+    align-content: center;
 }

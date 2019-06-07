@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToolBox should render correctly whithout props 1`] = `
+<div
+  className="MachineDescription"
+>
+  <h3>
+    Descripción
+  </h3>
+  <div
+    className="description"
+  >
+    <p>
+      Name:
+      <span />
+    </p>
+    <p>
+      Precio:
+      <span />
+    </p>
+  </div>
+</div>
+`;

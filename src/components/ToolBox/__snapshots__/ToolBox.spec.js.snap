@@ -12,14 +12,16 @@ exports[`ToolBox should render correctly whithout props 1`] = `
       <tr>
         <td>
           <Connect(ButtonToolBox)
-            nombre="starter"
+            name="starter"
+            price={400}
             seleccionado={false}
             src="starter.PNG"
           />
         </td>
         <td>
           <Connect(ButtonToolBox)
-            nombre="crafter"
+            name="crafter"
+            price={500}
             seleccionado={false}
             src="crafter.PNG"
           />
@@ -28,14 +30,16 @@ exports[`ToolBox should render correctly whithout props 1`] = `
       <tr>
         <td>
           <Connect(ButtonToolBox)
-            nombre="seller"
+            name="seller"
+            price={300}
             seleccionado={false}
             src="seller.PNG"
           />
         </td>
         <td>
           <Connect(ButtonToolBox)
-            nombre="furnace"
+            name="furnace"
+            price={200}
             seleccionado={false}
             src="furnace.PNG"
           />
@@ -44,7 +48,8 @@ exports[`ToolBox should render correctly whithout props 1`] = `
       <tr>
         <td>
           <Connect(ButtonToolBox)
-            nombre="transporter"
+            name="transporter"
+            price={100}
             seleccionado={false}
             src="transporter.PNG"
           />
@@ -60,7 +65,7 @@ exports[`ToolBox should render correctly whithout props 1`] = `
       <tr>
         <td>
           <Connect(EditionButton)
-            nombre="delete"
+            machine="delete"
             seleccionado={false}
             src="delete.PNG"
             type="DELETE"
@@ -68,7 +73,7 @@ exports[`ToolBox should render correctly whithout props 1`] = `
         </td>
         <td>
           <Connect(EditionButton)
-            nombre="move"
+            machine="move"
             seleccionado={false}
             src="move.PNG"
             type="MOVE"
@@ -78,7 +83,7 @@ exports[`ToolBox should render correctly whithout props 1`] = `
       <tr>
         <td>
           <Connect(EditionButton)
-            nombre="rotate"
+            machine="rotate"
             seleccionado={false}
             src="rotate.PNG"
             type="ROTATE"

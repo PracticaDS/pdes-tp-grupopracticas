@@ -1,0 +1,22 @@
+.MachineDescription {
+    height: 60%;
+    width: 100%;
+    justify-self: start;
+}
+
+.description {
+    height: 50%;
+    background-color: white;
+    border-radius: 1%;
+    padding-top: 5%;
+}
+
+p {
+    margin-left: 5%;
+    text-align: left;
+    font-weight: bold;
+}
+
+p span {
+    font-weight: normal;
+}

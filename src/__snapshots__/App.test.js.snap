@@ -21,7 +21,6 @@ exports[`App should render correctly whithout props 1`] = `
     <div
       className="App"
     >
-      <ToolBox />
       <Fabrica />
     </div>
   </div>

@@ -1,19 +1,8 @@
 .App {
-  text-align: center;
-  margin: 2%;
-  display: grid;
-  grid-template-columns: 20% 60% 20%;
-  height: 80vh;
- }
 
-.Container {
-  text-align: center;
-  height: 100%;
 }
 
-.fabrica{
-  align-items: center;
-  background-color: white;
+h1 {
+  text-align: center;
+  color: orange;
 }
-
-h1{color: orange;}

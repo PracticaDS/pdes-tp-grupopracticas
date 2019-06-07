@@ -4,6 +4,8 @@ exports[`Fabrica should render correctly whithout props 1`] = `
 <div
   className="Fabrica"
 >
+  <ToolBox />
   <Connect(Board) />
+  <Connect(MachineDescription) />
 </div>
 `;
