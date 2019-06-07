@@ -3,23 +3,29 @@ import './EditionButton.css'
 import { connect } from 'react-redux'
 import { clearCell, rotateMachine } from '../../actions/cellsAction'
 import { unselectCelda } from '../../actions/editionButtonAction'
-import { DELETE, ROTATE } from '../../utils/EditionTypes'
+import { selectMachine } from '../../actions/toolboxAction'
+import { DELETE, ROTATE, MOVE } from '../../utils/EditionTypes'
 
 
 export class EditionButton extends Component {
 
 
     onClick = () => {
-        if(this.props.selectedCelda) {
+        if(this.props.selectedCell) {
             switch(this.props.type) {
                 case DELETE:
-                    this.props.clearCell(this.props.selectedCelda)
+                    this.props.clearCell(this.props.selectedCell.cellId)
                     this.props.unselectCelda()
                     break
                 case ROTATE:
-                    this.props.rotateMachine(this.props.selectedCelda)
+                    this.props.rotateMachine(this.props.selectedCell.cellId)
                     this.props.unselectCelda()
                     break
+                case MOVE:
+                        this.props.clearCell(this.props.selectedCell.cellId)
+                        this.props.selectMachine(this.props.selectedCell.machine)
+                        this.props.unselectCelda()
+                        break
                 default:
                     this.props.unselectCelda()
             }
@@ -43,13 +49,14 @@ export class EditionButton extends Component {
 }
 
 const mapStateToProps = state => ({
-    selectedCelda: state.selectedCelda.celda,
+    selectedCell: state.selectedCelda.celda,
 })
 
 const actions = {
     clearCell,
     unselectCelda,
-    rotateMachine
+    rotateMachine,
+    selectMachine
 }
 
 export default connect(mapStateToProps, actions)(EditionButton)

@@ -1,10 +1,10 @@
 import { EDIT_MACHINE, SELECT_CELDA, UNSELECT_CELL } from './types';
 
 
-export const selectCelda = (celda) => dispatch => {
+export const selectCell = (cell) => dispatch => {
     dispatch({
         type: SELECT_CELDA,
-        payload: celda
+        payload: cell
     })
 }
 
