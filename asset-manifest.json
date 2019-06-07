@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/tp-revolucion/static/css/main.a155b844.chunk.css",
+    "main.js": "/tp-revolucion/static/js/main.40242ebd.chunk.js",
+    "main.js.map": "/tp-revolucion/static/js/main.40242ebd.chunk.js.map",
+    "runtime~main.js": "/tp-revolucion/static/js/runtime~main.ab84202b.js",
+    "runtime~main.js.map": "/tp-revolucion/static/js/runtime~main.ab84202b.js.map",
+    "static/js/2.1c70dc0c.chunk.js": "/tp-revolucion/static/js/2.1c70dc0c.chunk.js",
+    "static/js/2.1c70dc0c.chunk.js.map": "/tp-revolucion/static/js/2.1c70dc0c.chunk.js.map",
+    "index.html": "/tp-revolucion/index.html",
+    "precache-manifest.27b32b473b96d54ed5b1c12c2040a8f2.js": "/tp-revolucion/precache-manifest.27b32b473b96d54ed5b1c12c2040a8f2.js",
+    "service-worker.js": "/tp-revolucion/service-worker.js",
+    "static/css/main.a155b844.chunk.css.map": "/tp-revolucion/static/css/main.a155b844.chunk.css.map",
+    "static/media/crafter.PNG": "/tp-revolucion/static/media/crafter.42bc2297.PNG",
+    "static/media/delete.PNG": "/tp-revolucion/static/media/delete.6e7a49f4.PNG",
+    "static/media/furnace.PNG": "/tp-revolucion/static/media/furnace.617ec208.PNG",
+    "static/media/move.PNG": "/tp-revolucion/static/media/move.cbfcb2fb.PNG",
+    "static/media/rotate.PNG": "/tp-revolucion/static/media/rotate.d45efe18.PNG",
+    "static/media/seller.PNG": "/tp-revolucion/static/media/seller.3d538c9e.PNG",
+    "static/media/starter.PNG": "/tp-revolucion/static/media/starter.8d09d4f3.PNG",
+    "static/media/transporter.PNG": "/tp-revolucion/static/media/transporter.0c46748f.PNG"
+  }
+}
