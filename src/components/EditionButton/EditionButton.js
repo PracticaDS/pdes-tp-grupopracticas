@@ -3,7 +3,7 @@ import './EditionButton.css'
 import { connect } from 'react-redux'
 import { clearCell, rotateMachine } from '../../actions/cellsAction'
 import { unselectCelda } from '../../actions/editionButtonAction'
-import { DELETE, MOVE, ROTATE } from '../../utils/EditionTypes'
+import { DELETE, ROTATE } from '../../utils/EditionTypes'
 
 
 export class EditionButton extends Component {
