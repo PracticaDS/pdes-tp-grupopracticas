@@ -1,0 +1,14 @@
+{
+    "parser": "babel-eslint",
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "no-undef": [ 1 ]
+    },
+    "env": {
+        "node": true,
+        "browser": true,
+        "jest": true
+    }
+}
