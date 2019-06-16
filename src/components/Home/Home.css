@@ -1,3 +1,19 @@
 .Home {
-    
+    margin-top: 50px !important;
 }
+
+.ui.card,
+.ui.cards>.card {
+  background-color: #3C6F84;
+}
+
+.ui.card>.content,
+.ui.cards>.card>.content {
+  background-color: #3C6F84;
+}
+
+.ui.card>.content.extra,
+.ui.cards>.card>.content.extra {
+  background-color: #3C6F84;
+}
+
