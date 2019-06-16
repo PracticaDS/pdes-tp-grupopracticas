@@ -12,17 +12,29 @@ exports[`App should render correctly whithout props 1`] = `
     }
   }
 >
-  <div
-    className="Container"
-  >
-    <h1>
-      Revolución Industrial
-    </h1>
+  <BrowserRouter>
     <div
       className="App"
     >
-      <Fabrica />
+      <h1>
+        Revolución Industrial
+      </h1>
     </div>
-  </div>
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <PrivateRoute
+        component={[Function]}
+        path="/home"
+      />
+      <PrivateRoute
+        component={[Function]}
+        path="/factory"
+      />
+    </Switch>
+  </BrowserRouter>
 </Provider>
 `;
