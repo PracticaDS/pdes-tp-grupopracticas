@@ -58,5 +58,8 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
+  },
+  "resolutions": {
+    "babel-jest": "24.7.1"
   }
 }
