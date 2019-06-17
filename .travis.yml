@@ -7,6 +7,9 @@ cache:
   directories:
     - node_modules
 
+before_script:
+  - cd frontend && yarn install && cd ..
+
 script:
   - cd frontend && yarn lint && yarn test && yarn build && cd ..
 
