@@ -4,9 +4,11 @@ node_js:
 
 before_script:
   - cd frontend && yarn install && cd ..
+  - cd backend && yarn install && cd ..
 
 script:
   - cd frontend && yarn lint && yarn test && yarn build && cd ..
+  - cd backend && yarn test && cd ..
 
 deploy:
   provider: pages
