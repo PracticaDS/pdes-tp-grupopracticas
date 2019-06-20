@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import './Login.css'
 import { Form, Container } from 'semantic-ui-react'
+import { connect } from 'react-redux'
+import { loginUser, loadFactories } from '../../actions/gameActions'
 
-
-export default class Login extends Component {
+export class Login extends Component {
 
     state = { name: '', email: '', submittedName: '', submittedEmail: '' }
 
@@ -11,8 +12,36 @@ export default class Login extends Component {
 
     handleSubmit = () => {
         const { name, email } = this.state
-        this.setState({ submittedName: name, submittedEmail: email })
-        this.redirectToHome()
+        // this.setState({ submittedName: name, submittedEmail: email })
+        
+        fetch(`api/user/${name}`)
+            .then(response => response.json())
+            .then(data => { 
+                const user = data.content
+                if(user) {
+                    this.loginUser(user)
+                    this.searchFactories(user._id)
+                } else {
+                    // crear nuevo usuario
+                }
+            })
+    }
+
+    loginUser(user) {
+        this.props.loginUser({username: user.username, id: user._id})
+    }
+
+    searchFactories(userId) {
+        console.log(userId)
+        fetch(`api/factories/${userId}`)
+            .then(response => response.json())
+            .then(data => { 
+                const factories = data.content
+                if(factories) {
+                    this.props.loadFactories(data.content)
+                    this.redirectToHome()
+                }
+            })
     }
 
     redirectToHome = () => {
@@ -38,3 +67,11 @@ export default class Login extends Component {
         )
     }
 }
+
+  
+const actions = { 
+    loginUser,
+    loadFactories
+}
+  
+export default connect(null, actions)(Login)

@@ -59,5 +59,6 @@
   },
   "resolutions": {
     "babel-jest": "24.7.1"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }

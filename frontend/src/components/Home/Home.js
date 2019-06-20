@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Card, Table, Container, Button, Icon } from 'semantic-ui-react'
 import './Home.css'
+import { connect } from 'react-redux';
 
-export default class Home extends Component {
+export class Home extends Component {
 
     create = () => {
         this.props.history.push("/factory")
@@ -16,13 +17,23 @@ export default class Home extends Component {
         
     }
 
+    componentWillMount() {
+        if(! this.props.user) {
+            this.redirectToLogin()
+        }
+    }
+
+    redirectToLogin = () => {
+        this.props.history.push("/")
+    }
+
     render() {
         return (
             <Container className="Home ui two column centered grid">
                 <Card className="fluid column">
                     <Card.Content>
                         <Card.Header>
-                            Hola Matias! Estas son tus fabricas.
+                            Hola {this.props.user.username}! Estas son tus fabricas.
                             <Button floated='right' onClick={this.create}>Crear</Button>
                         </Card.Header>
                     </Card.Content>
@@ -76,3 +87,14 @@ export default class Home extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    user: state.game.user,
+    factories: state.game.factories
+})
+
+const actions = { 
+    
+}
+  
+  export default connect(mapStateToProps, null)(Home)

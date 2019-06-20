@@ -11,3 +11,8 @@ export const ADD_MACHINE_TO_CELL = 'ADD_MACHINE_TO_CELL'
 export const SELECT_MACHINE_2 = 'SELECT_MACHINE_2'
 export const ROTATE_MACHINE = 'ROTATE_MACHINE'
 export const MOVE_MACHINE = 'MOVE_MACHINE'
+
+
+// game action types
+export const LOGIN_USER = 'LOGIN_USER'
+export const LOAD_FACTORIES = 'LOAD_FACTORIES'
