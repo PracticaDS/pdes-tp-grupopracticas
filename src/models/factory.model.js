@@ -16,6 +16,14 @@ const FactorySchema = new mongoose.Schema({
     },
     cant_machines: {
         type: Number
+    },
+    updated: {
+        type: Date,
+        default: Date.now
+    },
+    created: {
+        type: Date,
+        required: true
     }
 })
 
