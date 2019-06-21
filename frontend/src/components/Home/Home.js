@@ -30,7 +30,6 @@ export class Home extends Component {
     }
 
     loadFactories = () => {
-        console.log(this.props.factories)
         if(this.props.factories && this.props.factories.length > 0) {
             return (
                 <Table celled inverted selectable>
@@ -49,7 +48,7 @@ export class Home extends Component {
                 </Table> 
             )
         } else {
-            return <p>Todavía no tiene partidas creadas.</p>
+            return <p>No tienes fábricas creadas. Crea una para empezar a jugar!</p>
         }
     }
 
@@ -84,7 +83,7 @@ export class Home extends Component {
                 <Card className="fluid column">
                     <Card.Content>
                         <Card.Header>
-                            Hola {this.props.user.username}! Estas son tus fabricas.
+                            Hola <span className='fontBold'>{this.props.user.username}</span>! Estas son tus fábricas.
                             <Button floated='right' onClick={this.create}>Crear</Button>
                         </Card.Header>
                     </Card.Content>
@@ -101,9 +100,5 @@ const mapStateToProps = state => ({
     user: state.game.user,
     factories: state.game.factories
 })
-
-const actions = { 
-    
-}
   
-  export default connect(mapStateToProps, null)(Home)
+export default connect(mapStateToProps, null)(Home)
