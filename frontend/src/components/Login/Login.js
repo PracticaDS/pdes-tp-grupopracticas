@@ -11,9 +11,7 @@ export class Login extends Component {
     handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
     handleSubmit = () => {
-        const { name, email } = this.state
-        // this.setState({ submittedName: name, submittedEmail: email })
-        
+        const { name } = this.state
         fetch(`api/user/${name}`)
             .then(response => response.json())
             .then(data => { 
@@ -22,8 +20,24 @@ export class Login extends Component {
                     this.loginUser(user)
                     this.searchFactories(user._id)
                 } else {
-                    // crear nuevo usuario
+                    this.createUser(name)
                 }
+            })
+    }
+
+    createUser(username) {
+        fetch('api/user', {
+            method: 'POST',
+            body: JSON.stringify({username: username}),
+            headers:{ 'Content-Type': 'application/json' }
+            })
+            .then(res => res.json())
+            .catch(error => console.error('Error:', error))
+            .then(data => {
+                const user = data.content
+                console.log('Success:', user)
+                this.loginUser(user)
+                this.redirectToHome()
             })
     }
 
@@ -32,7 +46,6 @@ export class Login extends Component {
     }
 
     searchFactories(userId) {
-        console.log(userId)
         fetch(`api/factories/${userId}`)
             .then(response => response.json())
             .then(data => { 
