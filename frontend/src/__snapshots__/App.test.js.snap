@@ -22,12 +22,28 @@ exports[`App should render correctly whithout props 1`] = `
     </div>
     <Switch>
       <Route
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(Login)",
+            "type": [Function],
+          }
+        }
         exact={true}
         path="/"
       />
       <PrivateRoute
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(Home)",
+            "type": [Function],
+          }
+        }
         path="/home"
       />
       <PrivateRoute

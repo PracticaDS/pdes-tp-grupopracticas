@@ -34,7 +34,7 @@ router.get(`${api_factories}/:user_id`, (req, res) => {
     }
     Factory.find({
         user_id: user_id
-    }, '_id name cant_machines'
+    }, '_id name cant_machines created updated'
     ).then(doc => {
         if(doc) {
             res.json({ content: doc })
@@ -55,7 +55,8 @@ router.post(api_factory, (req, res) => {
     const factory = new Factory({
         user_id: body.user_id,
         name: body.name,
-        cells: body.cells
+        cells: body.cells,
+        created: new Date()
     })
     factory.save(factory)
         .then((factory) => res.status(201).send( {content :factory }))
