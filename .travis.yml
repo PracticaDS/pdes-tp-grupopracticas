@@ -3,11 +3,11 @@ node_js:
   - "v10.15.2"
 
 before_script:
-  - yarn install
+  - cd backend && yarn install && cd ..
   - cd frontend && yarn install && cd ..
 
 script:
-  - yarn test
+  - cd backend && yarn test && cd ..
   - cd frontend && yarn lint && yarn test && yarn build && cd ..
 
 deploy:
