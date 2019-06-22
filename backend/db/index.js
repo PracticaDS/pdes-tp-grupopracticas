@@ -1,11 +1,6 @@
 const mongoose = require('mongoose')
 
-const server = 'ds339177.mlab.com:39177'
-const database = 'revolution_db'
-const user = 'revolution_db_user'
-const password = 'PzLdsJR8marZBpwr'
-
-const DB_URI = `mongodb://${user}:${password}@${server}/${database}`
+const DB_URI = process.env.MONGODB_URI
 
 function connect() {
     return new Promise((resolve, reject) => {
