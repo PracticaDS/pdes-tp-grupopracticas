@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha --opts ./test/mocha.opts",
-    "heroku-postbuild": "cd .. && cd frontend && yarn install && yarn run build"
+    "heroku-postbuild": "cd frontend && yarn install && yarn run build"
   },
   "author": "",
   "license": "ISC",
