@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "test": "mocha --opts ./test/mocha.opts"
+    "start": "node server.js",
+    "test": "mocha --opts ./test/mocha.opts",
+    "heroku-postbuild": "cd .. && cd frontend && yarn install && yarn run build"
   },
   "author": "",
   "license": "ISC",
