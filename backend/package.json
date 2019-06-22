@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha --opts ./test/mocha.opts",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+    "heroku-postbuild": "cd .. && npm install frontend && npm run build frontend"
   },
   "author": "",
   "license": "ISC",
