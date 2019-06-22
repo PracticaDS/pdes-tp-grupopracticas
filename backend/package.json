@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha --opts ./test/mocha.opts",
-    "heroku-postbuild": "cd frontend && npm install && npm run build"
+    "heroku-postbuild": "cd frontend && npm install -g eslint-plugin-react && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
