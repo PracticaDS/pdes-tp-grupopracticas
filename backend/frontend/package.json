@@ -63,6 +63,7 @@
   },
   "proxy": "http://localhost:5000",
   "engines": {
-    "node": "v10.15.2"
+    "node": "v10.15.2",
+    "npm": "6.4.1"
   }
 }
