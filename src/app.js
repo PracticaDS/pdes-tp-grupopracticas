@@ -11,7 +11,6 @@ app.use(bodyParse.json())
 app.use(usersRoute)
 app.use(factoryRoute)
 
-
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../frontend/build')))
 
