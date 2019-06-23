@@ -1,4 +1,4 @@
-import { UPDATE_CELLS, CLEAR_CELL, ADD_MACHINE_TO_CELL, SELECT_MACHINE_2, ROTATE_MACHINE } from './types';
+import { UPDATE_CELLS, CLEAR_CELL, ADD_MACHINE_TO_CELL, SELECT_MACHINE_2, ROTATE_MACHINE, LOAD_FACTORY } from './types';
 
 
 export const updateCell = (cells) => dispatch => {
@@ -39,3 +39,9 @@ export const rotateMachine = (cellId) => dispatch => {
     })
 }
 
+export const loadFactory = (factory) => dispatch => {
+    dispatch({
+        type: LOAD_FACTORY,
+        payload: factory
+    })
+}

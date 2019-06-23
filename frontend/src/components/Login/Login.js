@@ -6,11 +6,18 @@ import { loginUser, loadFactories } from '../../actions/gameActions'
 
 export class Login extends Component {
 
-    state = { name: '', email: '', submittedName: '', submittedEmail: '' }
+    state = { 
+        name: '', 
+        email: '', 
+        submittedName: '', 
+        submittedEmail: '', 
+        loading: false 
+    }
 
     handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
     handleSubmit = () => {
+        this.setState({loading:true})
         const { name } = this.state
         fetch(`api/user/${name}`)
             .then(response => response.json())
@@ -65,14 +72,15 @@ export class Login extends Component {
         return (
             <div className="Login ui two column centered grid">
                 <Container className="column" textAlign="center">
-                    <Form onSubmit={this.handleSubmit}>
+                    <Form onSubmit={this.handleSubmit} >
                         <h3>Ingresar usuario</h3>
                         <Form.Group>
                             <Form.Input width={14} placeholder='Usuario' 
                                 name='name' 
                                 value={this.state.name} 
-                                onChange={this.handleChange} />
-                            <Form.Button content='Entrar' width={2} />
+                                onChange={this.handleChange} 
+                                required/>
+                            <Form.Button content='Entrar' width={2} loading={this.state.loading} />
                         </Form.Group>
                     </Form>
                 </Container>

@@ -1,8 +1,4 @@
-import { CLEAR_CELL, ADD_MACHINE_TO_CELL, SELECT_MACHINE_2, ROTATE_MACHINE } from '../actions/types';
-
-
-
-
+import { CLEAR_CELL, ADD_MACHINE_TO_CELL, SELECT_MACHINE_2, ROTATE_MACHINE, LOAD_FACTORY } from '../actions/types';
 
 
 export default function(state = initialState, action) {
@@ -15,6 +11,8 @@ export default function(state = initialState, action) {
             return addMachine(state, action.payload)
         case CLEAR_CELL:
             return clearCell(state, action.payload)
+        case LOAD_FACTORY:
+            return action.payload.cells
         default:
             return state    
     }
