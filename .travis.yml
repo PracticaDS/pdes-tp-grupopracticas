@@ -3,19 +3,19 @@ node_js:
   - "v10.15.2"
 
 before_script:
-  - cd backend && yarn install && cd ..
+  - yarn install
   - cd frontend && yarn install && cd ..
 
 script:
-  - cd backend && yarn test && cd ..
-  - cd frontend && yarn lint && yarn test && yarn build && cd ..
+  - yarn test
+  - cd frontend && yarn lint && yarn test && cd ..
 
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $github_token
-  local_dir: frontend/build
-  on:
-    branch: master
-
+  provider: heroku
+  api_key:
+    master: $heroku_api_key
+    develop: $heroku_api_key
+  app:
+    master: tp-revolution-prod
+    develop: tp-revolution-dev
 
