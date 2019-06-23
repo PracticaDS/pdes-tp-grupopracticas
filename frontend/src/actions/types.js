@@ -16,3 +16,5 @@ export const MOVE_MACHINE = 'MOVE_MACHINE'
 // game action types
 export const LOGIN_USER = 'LOGIN_USER'
 export const LOAD_FACTORIES = 'LOAD_FACTORIES'
+
+export const LOAD_FACTORY = 'LOAD_FACTORY'
