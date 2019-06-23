@@ -15,9 +15,7 @@ deploy:
   api_key:
     master: $heroku_api_key
     develop: $heroku_api_key
-    heroku_config: $heroku_api_key
   app:
     master: tp-revolution-prod
     develop: tp-revolution-dev
-    heroku_config: tp-revolution-dev
 
