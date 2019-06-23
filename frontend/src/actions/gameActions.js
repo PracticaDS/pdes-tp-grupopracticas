@@ -1,4 +1,4 @@
-import { LOGIN_USER, LOAD_FACTORIES } from './types';
+import { LOGIN_USER, LOAD_FACTORIES, CURRENT_FACTORY } from './types';
 
 
 export const loginUser = (user) => dispatch => {
@@ -12,5 +12,12 @@ export const loadFactories = (factories) => dispatch => {
     dispatch({
         type: LOAD_FACTORIES,
         payload: factories
+    })
+}
+
+export const currentFactory = (factory) => dispatch => {
+    dispatch({
+        type: CURRENT_FACTORY,
+        payload: factory
     })
 }

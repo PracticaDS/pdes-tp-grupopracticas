@@ -18,3 +18,5 @@ export const LOGIN_USER = 'LOGIN_USER'
 export const LOAD_FACTORIES = 'LOAD_FACTORIES'
 
 export const LOAD_FACTORY = 'LOAD_FACTORY'
+
+export const CURRENT_FACTORY = 'CURRENT_FACTORY'

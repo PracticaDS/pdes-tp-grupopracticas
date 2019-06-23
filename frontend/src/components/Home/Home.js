@@ -4,6 +4,7 @@ import './Home.css'
 import { connect } from 'react-redux'
 import moment from 'moment'
 import { loadFactory } from '../../actions/cellsAction'
+import { currentFactory } from '../../actions/gameActions'
 import { createEmptyCells } from '../../utils/FactoryUtils'
 
 export class Home extends Component {
@@ -108,6 +109,7 @@ export class Home extends Component {
             .then(data => { 
                 if(data.content) {
                     this.props.loadFactory(data.content)
+                    this.props.currentFactory(data.content)
                     this.redirectToFactory()
                 }
             })
@@ -174,7 +176,8 @@ export class Home extends Component {
 }
 
 const actions = { 
-    loadFactory
+    loadFactory,
+    currentFactory
 }
 
 const mapStateToProps = state => ({
