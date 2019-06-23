@@ -1,4 +1,4 @@
-import { LOGIN_USER, LOAD_FACTORIES } from '../actions/types';
+import { LOGIN_USER, LOAD_FACTORIES, CURRENT_FACTORY } from '../actions/types';
 
 const initialState = {  }
 
@@ -13,6 +13,11 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 factories: action.payload
+            }
+        case CURRENT_FACTORY:
+            return {
+                ...state,
+                currentFactory: action.payload
             }
         default:
             return state        
