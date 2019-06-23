@@ -12,7 +12,20 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.87.2"
+    "semantic-ui-react": "^0.87.2",
+    "@babel/core": "^7.4.4",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@storybook/cli": "^5.0.11",
+    "@storybook/react": "^5.0.11",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.3.5",
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-react": "^7.13.0",
+    "redux-devtools-extension": "^2.13.8"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -59,7 +72,12 @@
     ]
   },
   "resolutions": {
-    "babel-jest": "24.7.1"
+    "babel-jest": "24.7.1",
+    "webpack": "4.29.6"
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "engines": {
+    "node": "v10.15.2",
+    "npm": "6.4.1"
+  }
 }
