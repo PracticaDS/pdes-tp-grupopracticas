@@ -4,8 +4,9 @@ import './Home.css'
 import { connect } from 'react-redux'
 import moment from 'moment'
 import { loadFactory } from '../../actions/cellsAction'
-import { currentFactory } from '../../actions/gameActions'
+import { currentFactory, loadFactories } from '../../actions/gameActions'
 import { createEmptyCells } from '../../utils/FactoryUtils'
+
 
 export class Home extends Component {
 
@@ -15,6 +16,7 @@ export class Home extends Component {
         dificulty: 0, 
         autoSave: true, 
         loading: false,
+        loadingPlay: false,
         showError: false
     }
 
@@ -26,28 +28,38 @@ export class Home extends Component {
     }
 
     play(factory){
-        console.log(factory)
+        this.setState({loadingPlay:true})
         fetch(`api/factory/${factory._id}`)
         .then(response => response.json())
         .then(data => { 
             if(data.content) {
                 this.props.loadFactory(data.content)
                 this.props.currentFactory(data.content)
-                this.setState({loading:false})
+                this.setState({loadingPlay:false})
                 this.redirectToFactory()
             }
         })
         .catch(err => {
-            console.log(err)
+            this.setState({loadingPlay:true})
+        })
+    }
+
+    delete(factory){
+        fetch(`api/factory/${factory._id}`, {
+            method:'delete',
+            headers: {'Content-Type':'application/json'}
+        })
+        .then(response => response.json())
+        .then(data => { 
+            if(data.content) {
+                this.searchFactories(this.props.user.id)
+            }
+        })
+        .catch(err => {
             this.setState({loading:false, showError:true})
         })
-
-        // this.props.history.push("/factory")
     }
 
-    delete = () => {
-        
-    }
 
     componentWillMount() {
         if(! this.props.user) {
@@ -91,10 +103,10 @@ export class Home extends Component {
                 <Table.Cell >{factory.cant_machines}</Table.Cell>
                 <Table.Cell >
                     <Button.Group icon>
-                        <Button onClick={this.play.bind(this, factory)} loading={this.props.loading}>
+                        <Button onClick={this.play.bind(this, factory)} loading={this.props.loadingPlay}>
                         <Icon name='play' />
                         </Button>
-                        <Button onClick={this.delete}>
+                        <Button onClick={this.delete.bind(this, factory)}>
                         <Icon name='trash' />
                         </Button>
                     </Button.Group>
@@ -130,8 +142,18 @@ export class Home extends Component {
                 }
             })
             .catch(err => {
-                console.log(err)
                 this.setState({loading:false, showError:true})
+            })
+    }
+
+    searchFactories(userId) {
+        fetch(`api/factories/${userId}`)
+            .then(response => response.json())
+            .then(data => { 
+                const factories = data.content
+                if(factories) {
+                    this.props.loadFactories(data.content)
+                }
             })
     }
 
@@ -193,6 +215,7 @@ export class Home extends Component {
 
 const actions = { 
     loadFactory,
+    loadFactories,
     currentFactory
 }
 
