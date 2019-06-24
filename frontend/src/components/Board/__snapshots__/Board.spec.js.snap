@@ -404,5 +404,11 @@ exports[`ToolBox should render correctly whithout props 1`] = `
     id={100}
     key="100"
   />
+  <Button
+    as="button"
+    icon="save"
+    loading={false}
+    onClick={[Function]}
+  />
 </div>
 `;

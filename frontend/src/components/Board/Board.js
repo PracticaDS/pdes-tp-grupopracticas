@@ -22,14 +22,12 @@ export class Board extends Component {
 
   saveFactory = () => {
     this.setState({loading:true})
-    console.log(this.props.currentFactory)
     const factory = {
         id: this.props.currentFactory._id,
         name: this.props.currentFactory.name,
         //autoSave: this.state,
         cells: this.props.cells
     }
-    console.log(factory)
     fetch('api/factory', {
       method:'put',
       headers: {'Content-Type':'application/json'}, 
