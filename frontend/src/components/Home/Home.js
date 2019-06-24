@@ -25,8 +25,24 @@ export class Home extends Component {
         this.props.history.push("/factory")
     }
 
-    play = () => {
-        this.props.history.push("/factory")
+    play(factory){
+        console.log(factory)
+        fetch(`api/factory/${factory._id}`)
+        .then(response => response.json())
+        .then(data => { 
+            if(data.content) {
+                this.props.loadFactory(data.content)
+                this.props.currentFactory(data.content)
+                this.setState({loading:false})
+                this.redirectToFactory()
+            }
+        })
+        .catch(err => {
+            console.log(err)
+            this.setState({loading:false, showError:true})
+        })
+
+        // this.props.history.push("/factory")
     }
 
     delete = () => {
@@ -66,16 +82,16 @@ export class Home extends Component {
         }
     }
 
-    createRow = (factorie) => {
+    createRow = (factory) => {
         return (
-            <Table.Row key={factorie._id}>
-                <Table.Cell>{factorie.name}</Table.Cell>
-                <Table.Cell>{this.formatDate(factorie.created)}</Table.Cell>
-                <Table.Cell>{this.formatDate(factorie.updated)}</Table.Cell>
-                <Table.Cell >{factorie.cant_machines}</Table.Cell>
+            <Table.Row key={factory._id}>
+                <Table.Cell>{factory.name}</Table.Cell>
+                <Table.Cell>{this.formatDate(factory.created)}</Table.Cell>
+                <Table.Cell>{this.formatDate(factory.updated)}</Table.Cell>
+                <Table.Cell >{factory.cant_machines}</Table.Cell>
                 <Table.Cell >
                     <Button.Group icon>
-                        <Button onClick={this.play}>
+                        <Button onClick={this.play.bind(this, factory)} loading={this.props.loading}>
                         <Icon name='play' />
                         </Button>
                         <Button onClick={this.delete}>
