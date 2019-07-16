@@ -1,14 +1,25 @@
 version: '3'
-
 services:
-  app:
-    container_name: docker-node-mongo
+  server:
+    container_name: revolution-backend
     restart: always
     build: .
     ports:
       - '5000:5000'
     links:
       - mongo
+  frontend:
+    container_name: revolution-frontend
+    build:
+      context: ./frontend/
+    command: npm start
+    volumes:
+      - ./frontend/:/usr/app
+      - /usr/app/node_modules
+    depends_on:
+      - server
+    ports:
+      - "3000:3000"
   mongo:
     container_name: mongo
     image: mongo

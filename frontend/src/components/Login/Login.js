@@ -30,6 +30,10 @@ export class Login extends Component {
                     this.createUser(name)
                 }
             })
+            .catch(error => {
+                //TODO
+                this.setState({loading: false})
+            })
     }
 
     createUser(username) {
@@ -39,10 +43,11 @@ export class Login extends Component {
             headers:{ 'Content-Type': 'application/json' }
             })
             .then(res => res.json())
-            .catch(error => console.error('Error:', error))
+            .catch(error => {
+                //TODO
+            })
             .then(data => {
                 const user = data.content
-                console.log('Success:', user)
                 this.loginUser(user)
                 this.redirectToHome()
             })
