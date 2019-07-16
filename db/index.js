@@ -1,6 +1,11 @@
 const mongoose = require('mongoose')
 
-const DB_URI = process.env.MONGODB_URI
+const DB_URI = 'mongodb://mongo:27017/docker-node-mongo'
+
+if (process.env.MONGODB_URI) {
+    DB_URI = process.env.MONGODB_URI
+}
+
 
 function connect() {
     return new Promise((resolve, reject) => {
