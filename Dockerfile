@@ -1,28 +1,27 @@
+# Setup and build the frontend
+
+FROM node:10 as frontend
+
+WORKDIR /usr/app/frontend/
+COPY frontend/package*.json ./
+RUN npm install -qy
+COPY frontend/ ./
+RUN npm run build
+
+
+# Setup the server
 
 FROM node:10
 
-WORKDIR /usr/src/app
+WORKDIR /usr/app/
+COPY --from=frontend /usr/app/frontend/build/ ./server/frontend/build/
 
+WORKDIR /usr/app/server/
 COPY package*.json ./
-
-COPY frontend/package*.json ./frontend
-
-RUN npm install
-
+RUN npm install -qy
 COPY . .
 
-# install dependencies and build frontend in the same container
-RUN npm install --prefix frontend
-RUN SKIP_PREFLIGHT_CHECK=true npm run-script build --prefix frontend
 
 EXPOSE 5000
-CMD [ "npm", "start" ]
 
-
-# FROM node:10 as client
-
-# WORKDIR /usr/app/client/
-# COPY client/package*.json ./
-# RUN npm install -qy
-# COPY client/ ./
-# RUN npm run build
+CMD ["npm", "start"]
